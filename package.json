@@ -1,0 +1,23 @@
+{
+  "name": "cgc-university-portal",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "Front",
+    "Server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm run dev --workspace=cgc-portal-api\" \"npm run dev --workspace=cgc-portal-frontend\"",
+    "build": "npm run build --workspace=cgc-portal-frontend",
+    "start": "npm run start --workspace=cgc-portal-api",
+    "test": "npm test --workspace=cgc-portal-api",
+    "db:migrate": "npm run migrate --workspace=cgc-portal-api",
+    "account:create": "npm run create-account --workspace=cgc-portal-api --"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

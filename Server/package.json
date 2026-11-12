@@ -1,0 +1,24 @@
+{
+  "name": "cgc-portal-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "migrate": "node scripts/migrate.js",
+    "create-account": "node scripts/create-account.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^7.0.3",
+    "pg": "^8.16.0",
+    "zod": "^3.25.0"
+  }
+}
