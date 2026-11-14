@@ -1,0 +1,25 @@
+The run instructions are in `README.md`. To start the portal on Windows:
+
+1. Install Node.js 20+ and PostgreSQL. Create a PostgreSQL database named `cgc_portal`.
+2. From the repository root, copy the example configuration:
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+   Edit `.env` with your database URL, a strong `JWT_SECRET` (at least 32 characters), and working SMTP settings.
+3. Install dependencies and initialize the database:
+   ```powershell
+   npm install
+   npm run db:migrate
+   ```
+4. Create an account. The command prompts for a password without displaying it:
+   ```powershell
+   npm run account:create -- --type student --id STUDENT_ID --email USER_EMAIL --name "Display Name"
+   ```
+   Use `--type employee` for an employee account.
+5. Start the API and frontend:
+   ```powershell
+   npm run dev
+   ```
+   Open **http://localhost:8080**.
+
+`Front/src/index.css` is the portal’s stylesheet; run the app from the repository root as above.
